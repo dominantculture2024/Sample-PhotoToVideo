@@ -8,7 +8,9 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "check": "tsc -b --noEmit"
+    "check": "tsc -b --noEmit",
+    "version:update": "node scripts/update-version.js",
+    "deploy": "npm run version:update && npm run build"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.56.0",

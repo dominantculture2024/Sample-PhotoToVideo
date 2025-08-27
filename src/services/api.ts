@@ -153,7 +153,7 @@ export const photoAPI = {
           throw new Error(`上傳失敗: ${error.message}`);
         }
         
-        const url = storage.getPhotoUrl(fileName);
+        const url = storage.getPublicUrl('photos', fileName);
         
         return {
           id: `photo-${Date.now()}-${index}`,
