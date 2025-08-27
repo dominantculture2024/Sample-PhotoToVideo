@@ -5,7 +5,7 @@ import { traeBadgePlugin } from 'vite-plugin-trae-solo-badge';
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/Sample-PhotoToVideo/',
+  base: process.env.NODE_ENV === 'production' ? '/Sample-PhotoToVideo/' : '/',
   build: {
     sourcemap: 'hidden',
   },
