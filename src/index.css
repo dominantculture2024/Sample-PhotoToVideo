@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* 藍白色系主題變量 */
+  --primary-50: #eff6ff;
+  --primary-100: #dbeafe;
+  --primary-500: #3b82f6;
+  --primary-600: #2563eb;
+  --primary-700: #1d4ed8;
+  
+  --secondary-50: #f8fafc;
+  --secondary-100: #f1f5f9;
+  --secondary-200: #e2e8f0;
+  --secondary-500: #64748b;
+  --secondary-600: #475569;
+  
+  --accent-100: #e0f2fe;
+  --accent-500: #0ea5e9;
+  --accent-600: #0284c7;
+}
+
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+  
+  body {
+    @apply bg-gradient-to-br from-blue-50 via-white to-sky-50 text-slate-900;
+    min-height: 100vh;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* 按鈕樣式 */
+  .btn-primary {
+    @apply bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+  }
+  
+  .btn-secondary {
+    @apply bg-white hover:bg-slate-50 text-slate-700 font-medium px-6 py-3 rounded-lg border border-slate-200 transition-all duration-200 shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+  }
+  
+  .btn-accent {
+    @apply bg-sky-500 hover:bg-sky-600 text-white font-medium px-6 py-3 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-sky-400 focus:ring-offset-2;
+  }
+  
+  /* 卡片樣式 */
+  .card {
+    @apply bg-white rounded-xl shadow-lg border border-slate-100 p-6 transition-all duration-200 hover:shadow-xl;
+  }
+  
+  .card-header {
+    @apply border-b border-slate-100 pb-4 mb-6;
+  }
+  
+  /* 輸入框樣式 */
+  .input-field {
+    @apply w-full px-4 py-3 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white;
+  }
+  
+  /* 進度條樣式 */
+  .progress-bar {
+    @apply w-full bg-slate-200 rounded-full h-2 overflow-hidden;
+  }
+  
+  .progress-fill {
+    @apply h-full bg-gradient-to-r from-blue-500 to-sky-500 rounded-full transition-all duration-500 ease-out;
+  }
+  
+  /* 狀態指示器 */
+  .status-success {
+    @apply text-green-600 bg-green-50 border-green-200;
+  }
+  
+  .status-processing {
+    @apply text-blue-600 bg-blue-50 border-blue-200;
+  }
+  
+  .status-error {
+    @apply text-red-600 bg-red-50 border-red-200;
+  }
+  
+  .status-pending {
+    @apply text-slate-600 bg-slate-50 border-slate-200;
+  }
+  
+  /* 導航樣式 */
+  .nav-link {
+    @apply text-slate-600 hover:text-blue-600 font-medium transition-colors duration-200;
+  }
+  
+  .nav-link-active {
+    @apply text-blue-600 font-semibold;
+  }
+  
+  /* 拖放區域樣式 */
+  .drop-zone {
+    @apply border-2 border-dashed border-slate-300 rounded-xl p-8 text-center transition-all duration-200 hover:border-blue-400 hover:bg-blue-50/50;
+  }
+  
+  .drop-zone-active {
+    @apply border-blue-500 bg-blue-50 text-blue-700;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-blue-600 to-sky-600 bg-clip-text text-transparent;
+  }
+  
+  .bg-glass {
+    @apply bg-white/80 backdrop-blur-sm;
+  }
+  
+  .shadow-glow {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.15);
+  }
+}
